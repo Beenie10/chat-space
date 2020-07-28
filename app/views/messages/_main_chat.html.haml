@@ -1,0 +1,52 @@
+.chat
+  .header
+    .header-left
+      .header-left__group
+        グループ名
+      %ul.header-left__members
+        Member :
+        %li.member
+        a-kun
+        %li.member
+        b-kun
+        %li.member
+        c-kun
+    = link_to '#' do
+      .button
+        edit
+  .messages
+    .message
+      .message-up
+        .message-up__user
+          kida
+        .message-up__data
+          2020/07/14
+      .message-content
+        .message-content__text
+          hello
+    .message
+      .message-up
+        .message-up__user
+          kida
+        .message-up__data
+          2020/07/14
+      .message-content
+        .message-content__text
+          hey
+    .message
+      .message-up
+        .message-up__user
+          kida
+        .message-up__data
+          2020/07/14
+      .message-content
+        .message-content__text
+          why?
+  .form
+    %form.new-message
+      .input-box
+        %input.input-box__text{placeholder: 'type a message'}
+        %label.input-box__image
+          = icon('fa', 'image', class: 'icon')
+          %input.input-box__image__file{type: 'file'}
+      %input.submit-btn{type: 'submit', value: 'SEND'}
