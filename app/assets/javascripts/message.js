@@ -2,7 +2,7 @@ $(function(){
   function buildHTML(message){
     if ( message.image ) {
       var html =
-       `<div class="message data-message-id=${message.id}">
+       `<div class="message" data-message-id=${message.id}>
           <div class="message-up">
             <div class="message-up__user">
               ${message.user_name}
@@ -21,7 +21,7 @@ $(function(){
       return html;
     } else {
       var html =
-       `<div class="message data-message-id=${message.id}">
+       `<div class="message" data-message-id=${message.id}>
           <div class="message-up">
             <div class="message-up__user">
               ${message.user_name}
@@ -77,7 +77,7 @@ $('#new_message').on('submit', function(e){
           insertHTML += buildHTML(message)
         });
         $('.messages').append(insertHTML);
-        $('messages').animate({scrollTop: $('.messages')[0].scrollHeight});
+        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
       }
     })
     .fail(function(){
