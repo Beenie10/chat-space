@@ -52,6 +52,7 @@ $('#new_message').on('submit', function(e){
     contentType: false
   })
     .done(function(data){
+      console.log(data)
       var html = buildHTML(data);
       $('.messages').append(html);
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
@@ -60,6 +61,7 @@ $('#new_message').on('submit', function(e){
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
+      $('.submit-btn').prop('disabled', false);
   });
 })
   var reloadMessages = function() {
